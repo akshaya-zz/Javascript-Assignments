@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="user.js"></script>
+    <script src="menuItem.js"></script>
+    <script src="data.js"></script>
+    <script src="order.js"></script>
+    <script src="PaymentService.js"></script>
+    <script src="DeliveryTracker.js"></script>
+    <script src="app.js"></script>
+    <title>Unavu</title>
+</head>
+
+<body>
+    <div class="container" id="login-screen" >
+        <div class="login">
+            <h2>Unavu</h2>
+            <input type="text" id="user-no" placeholder="Mobile number" />
+            <input type="password" id="password" placeholder="password" />
+            <button id="login-submit" onclick="app.validateLogin()">Submit</button>
+            <p id="validation-msg"></p>
+        </div>
+    </div>
+
+    <div class="container" id="home-screen" style="display:none;">
+        <div class="home">
+            <h2>Welcome to Unavu</h2>
+            <p id="welcome-msg"></p>
+            <div id="menu-list"></div>
+            <div id="cart-section"><p class="cart-empty">Your cart is empty.</p></div>
+        </div>
+    </div>
+    <div class="container" id="check-out-screen" style="display: none;">
+        <div class="check-out">
+            <div id="address-card">
+                <h3>Delivery Address</h3>
+                <p id="address-text"></p>
+            </div>
+            <div id="order-description-card">
+                <h3>Order Summary</h3>
+                <pre id="order-description"></pre>
+            </div>
+            <div id="bill-card">
+                <h3>Final Bill</h3>
+                <ul id="bill-breakup">
+                    <li id="order-amount">
+                        <span class="label">Order Amount</span>
+                        <span class="amount"></span>
+                    </li>
+                    <li id="gst">
+                        <span class="label">GST (5%)</span>
+                        <span class="amount"></span>
+                    </li>
+                    <li id="delivery-charge">
+                        <span class="label">Delivery Charge</span>
+                        <span class="amount"></span>
+                    </li>
+                    <li id="final-amount">
+                        <span class="label">Final Amount</span>
+                        <span class="amount"></span>
+                    </li>
+                </ul>
+            </div>
+            <button id="btn-pay" onclick="app.showOrderConfirmationScreen()">Pay</button>
+        </div>
+    </div>
+      <div class="container" id="payment-screen" style="display:none;">
+        <div class="payment">
+            <p id="order-msg"></p>
+            <div class="progress-tracker">
+                <div class="progress-line-fill" id="progress-fill"></div>
+                <div class="stages-row">
+                    <div class="stage-item" id="stage-0">
+                        <div class="stage-dot"></div>
+                        <span class="stage-label">Order Placed</span>
+                    </div>
+                    <div class="stage-item" id="stage-1">
+                        <div class="stage-dot"></div>
+                        <span class="stage-label">Payment Confirmed</span>
+                    </div>
+                    <div class="stage-item" id="stage-2">
+                        <div class="stage-dot"></div>
+                        <span class="stage-label">Preparing Food</span>
+                    </div>
+                    <div class="stage-item" id="stage-3">
+                        <div class="stage-dot"></div>
+                        <span class="stage-label">Out for Delivery</span>
+                    </div>
+                    <div class="stage-item" id="stage-4">
+                        <div class="stage-dot"></div>
+                        <span class="stage-label">Delivered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

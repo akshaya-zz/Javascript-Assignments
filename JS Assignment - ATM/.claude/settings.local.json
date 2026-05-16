@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"/Users/akshayaatm/Desktop/JS Class/JS Assignment - ATM/css\")"
+    ],
+    "additionalDirectories": [
+      "/Users/akshayaatm/Desktop/JS Class/JS Assignment - ATM/css"
+    ]
+  }
+}
